@@ -14,3 +14,10 @@ I often have ideas and while writting them down is always an option, but then no
 
 
 # How can I deploy it?
+
+# Why did I do this?
+Main goal is to improve my skills with React, but also to see how fast can I setup a project now with AI (I do not want to use it with the React part but yes with the other parts that I already know well)
+
+Second goal is to use posthog and learn to use their product, measuring activation, retention, Feature flgas and replay
+
+Third goal, if people find this cool and start using it by themselves it would be awesome. And I think it can help others to learn about these technologies. Will try to keep the git history as clean as possible, so one can review how I progress with it and how you can structure it

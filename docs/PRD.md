@@ -81,103 +81,39 @@ To become the go-to platform for turning raw ideas and thoughts into organized, 
 
 ---
 
-## 4. User Stories & Use Cases
 
-### 4.1 User Story: Quick Voice Note Capture
-**As a** busy professional  
-**I want to** send a voice note to the app  
-**So that** I can capture an idea without stopping my current work
+## 4. Core Features MVP (Detailed)
 
-**Acceptance Criteria:**
-- User can record audio via web or mobile interface
-- Recording takes <5 seconds to start
-- Audio is processed and converted to tasks within 30 seconds
-
----
-
-### 4.2 User Story: Automatic Task Extraction
-**As a** user with scattered thoughts  
-**I want** AI to extract multiple action items from a single note  
-**So that** I don't have to manually organize my unstructured ideas
-
-**Acceptance Criteria:**
-- AI identifies 2-5 distinct action items from a note
-- Each action item includes: title, description, estimated priority, potential deadline
-- User can accept/reject/modify suggested tasks before saving
-
----
-
-### 4.3 User Story: Rich Task Details
-**As a** project manager  
-**I want** tasks to include deadline, priority, and subtasks  
-**So that** I can properly plan and execute work
-
-**Acceptance Criteria:**
-- Tasks can have deadline dates with optional times
-- Priority levels: Low, Medium, High, Urgent
-- Subtasks can be added and marked as dependent
-- Related items can be linked between tasks
-
----
-
-### 4.4 User Story: Calendar Synchronization
-**As a** someone who uses Google Calendar  
-**I want** high-priority tasks to sync to my calendar  
-**So that** I don't miss important deadlines
-
-**Acceptance Criteria:**
-- Tasks with deadlines auto-sync to calendar
-- Calendar events show task details in description
-- Changes in calendar reflect back in the app (bi-directional sync)
-
----
-
-## 5. Core Features (Detailed)
-
-### 5.1 Note Input Methods
+### 4.1 Note Input Methods
 - **Text Input:** Web interface text area and mobile text input
 - **Audio Input:** Voice recording with transcription
-- **Batch Import:** Paste multiple notes at once
-- **File Upload:** Import from notes app exports (Markdown, PDF)
 
-### 5.2 AI Processing Engine
+### 4.2 AI Processing Engine
 - **Note Analysis:** Identify action items, deadlines, priorities, and relationships
 - **Intelligent Extraction:** Parse natural language for due dates ("next Friday", "in 3 days")
-- **Relationship Detection:** Identify related/dependent tasks
-- **Smart Suggestions:** Propose subtasks and related items based on context
 
-### 5.3 Task Management
-- **Task Dashboard:** List, grid, and calendar views
+### 4.3 Task Management
+- **Task Dashboard:** List view
 - **Filtering & Sorting:** By priority, deadline, status, tags
 - **Task Editor:** Modify any task detail after creation
 - **Status Tracking:** Not Started, In Progress, Completed, Archived
-- **Templates:** Create task templates for recurring patterns
-
-### 5.4 Integrations
-- **Calendar:** Google Calendar, Outlook Calendar (MVP: Google Calendar)
-- **Notifications:** Email, push notifications, in-app reminders
-- **Export:** CSV, JSON, or calendar format export
-
-### 5.5 Collaboration (Post-MVP)
-- **Sharing:** Share specific tasks or lists with others
-- **Comments:** Add notes and comments to tasks
-- **Delegation:** Assign tasks to team members
 
 ---
 
 ## 6. Technical Considerations
 
 ### 6.1 AI/ML Requirements
-- Language model for natural language processing (GPT-4 or similar)
-- Audio transcription service (Whisper or equivalent)
-- Training data for task extraction accuracy
+- Language model for natural language processing (GPT or similar, use open-router to be able to change between providers easily)
+- Audio transcription service (web speech API or Whisper or equivalent for paid users)
 - Context awareness for deadline parsing
 
 ### 6.2 Data Storage & Privacy
-- Encrypted storage of user notes and tasks
-- GDPR/privacy compliance for note data
-- User data retention policy
+- API basic auth (user & password)
 - API rate limiting to manage AI costs
+- TODO
+    - GDPR/privacy compliance for note data
+    - Encrypted storage of user notes and tasks
+    - User data retention policy
 
 ### 6.3 Performance
 - Notes processed within 30 seconds
@@ -199,37 +135,25 @@ To become the go-to platform for turning raw ideas and thoughts into organized, 
 
 ## 8. Success Metrics & KPIs
 
-| Metric | Target | Timeline |
-|--------|--------|----------|
-| User Sign-ups | 1,000 | 3 months |
-| DAU (Daily Active Users) | 300 | 3 months |
-| Note-to-Task Conversion Rate | 85%+ success | Ongoing |
-| Average Tasks Created Per User | 15/month | 6 months |
-| User Retention (Day 30) | 60% | 6 months |
-| Task Completion Rate | +40% vs. before | 6 months |
-| User Satisfaction (NPS) | 40+ | 3 months |
+### North start metric
+
+Number of actions created
+
+### v0 metric tree
+
+* Number of signups
+* Number of times app is opened
+* Number of notes created
+* Number of actions set to Done
 
 ---
 
 ## 9. Release Timeline
 
-### Phase 1 (MVP - Weeks 1-8)
+### Phase 1 (MVP - Days 1-3)
 - Core note capture (text + audio)
 - Basic AI extraction (single action items)
 - Simple task dashboard
-- Google Calendar sync
-
-### Phase 2 (Weeks 9-16)
-- Multiple action items per note
-- Rich task details (subtasks, relationships)
-- Advanced filtering and views
-- Mobile app (iOS/Android)
-
-### Phase 3 (Weeks 17-24)
-- Collaboration features
-- Advanced templates
-- Analytics dashboard
-- Performance optimization
 
 ---
 
@@ -243,46 +167,9 @@ To become the go-to platform for turning raw ideas and thoughts into organized, 
 
 ---
 
-## 11. Business Model & Monetization (Future)
+## 11 monetization
 
-- **Freemium:** Basic features free, premium tier with advanced features
-- **Premium Features:** Advanced integrations, team collaboration, analytics, unlimited tasks
-- **Pricing Tier:** Free (limited notes/month), Pro ($9.99/month), Team ($19.99/month)
+MVP app will be open source offering basic features, user will need to input their own keys and handle by themselves the deployment (not cloud self-service offering), but will provide quick guide to self host it in a easy and cost-effective way
 
----
+If I want to continue with it, later we could create a paid version with extra features and provide the cloud offering version
 
-## 12. Risks & Mitigation
-
-| Risk | Impact | Mitigation |
-|------|--------|-----------|
-| AI extraction accuracy issues | Low user adoption | Implement human review, feedback loop, continuous training |
-| Privacy concerns with audio | Legal/reputation risk | Strong encryption, transparent privacy policy, no data sharing |
-| Competing products (Todoist, Notion) | Market challenges | Focus on AI differentiation and speed |
-| High API costs for AI | Profitability risk | Batch processing, caching, cost optimization |
-
----
-
-## 13. Open Questions & Future Considerations
-
-- Should subtasks auto-extract or be manually created?
-- How aggressive should AI be in suggesting related items?
-- Should templates be AI-generated or user-created?
-- Mobile app launch priority vs. web optimization?
-- Premium features strategy?
-
----
-
-## Appendix: Competitive Analysis (Brief)
-
-**Todoist:** Great task management but requires manual entry  
-**Notion:** Powerful but complex, not optimized for quick capture  
-**Apple Reminders:** Simple but limited, no AI assistance  
-**Microsoft To Do:** Integrated with Office but basic features  
-
-**Our Differentiation:** AI-powered automatic conversion from notes to structured tasks
-
----
-
-**Document Owner:** [Product Manager Name]  
-**Stakeholders:** Engineering, Design, Marketing, Customer Success  
-**Feedback & Updates:** [Feedback channel/process]
