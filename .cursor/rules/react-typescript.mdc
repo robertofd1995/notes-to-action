@@ -16,6 +16,9 @@ Code Style and Structure
   - Use descriptive variable names with auxiliary verbs (e.g., isLoading, hasError).
   - Use named exports; avoid default exports
   - Structure files logically: component, types, styles
+  - Only use absolute positioning when necessary. Opt for responsive and well structured layouts that use flexbox and grid by default
+  - Refactor code as you go to keep code clean
+  - Keep file sizes small and put helper functions and components in their own files.
 
 Naming Conventions
   - Always look around the codebase for naming conventions, and follow the best practices of the environment (e.g. use `camelCase` variables in JS, `snake_case` in Python).

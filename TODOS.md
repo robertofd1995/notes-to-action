@@ -2,15 +2,15 @@
 
 ## Design
 
-* [ ] Document what I want to build and why
-* [ ] Functional requirements (super MVP)
+* [X] Document what I want to build and why
+* [X] Functional requirements (super MVP)
 * [ ] Create wireframe of app (Figma, use some template components)
 
 # WIP implement general plan
 
-* [ ] Create github repo
+* [X] Create github repo
 
-  * [ ] clone it locally (Fix issue why I cannot clone from github)
+  *X[ ] clone it locally (Fix issue why I cannot clone from github)
 * [ ] Learn about rendering & hooks (roadmap.sh)
 * [ ] Create components
 

@@ -12,6 +12,12 @@ I often have ideas and while writting them down is always an option, but then no
 
 # How can I run it locally?
 
+## frontend
+`npm run dev`
+
+## backend
+TODO
+
 
 # How can I deploy it?
 
