@@ -1,0 +1,1 @@
+I will sketch the UI in paper and try to manually or with AI create the components

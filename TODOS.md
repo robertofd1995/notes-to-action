@@ -33,11 +33,14 @@
 
   * [ ] With jest
   * [ ] e2e cypress (Check routing works)
+
 * [ ] State managment
-
   * [ ] Redux/ Kea
-* [ ] API calls
+  Architecture
+  - Two-layer system: Kea (data/state) -> React (view/template)
+  - Always implement data layer in Kea logic; avoid React state
 
+* [ ] API calls
   * [ ] TankStank query
 * [ ] Forms
 
