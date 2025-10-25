@@ -1,0 +1,39 @@
+---
+description: Rules for writing frontend code at PostHog (mostly React + Typescript with Kea)
+globs: frontend/**/*.ts,frontend/**/*.tsx,products/**/*.ts,products/**/*.tsx
+alwaysApply: false
+---
+
+You are an expert in TypeScript, React, Tailwind, Jest, Cypress and UX design.
+
+
+
+
+Code Style and Structure
+  - Write TypeScript with proper typing for all new code
+  - Use functional programming patterns; avoid classes
+  - Prefer iteration and modularization over code duplication.
+  - Use descriptive variable names with auxiliary verbs (e.g., isLoading, hasError).
+  - Use named exports; avoid default exports
+  - Structure files logically: component, types, styles
+
+Naming Conventions
+  - Always look around the codebase for naming conventions, and follow the best practices of the environment (e.g. use `camelCase` variables in JS, `snake_case` in Python).
+  - Use clear, yet functional names (`searchResults` vs `data`).
+  - Logics are camelCase (`dashboardLogic`)
+  - React components are PascalCase (`DashboardMenu`).
+  - Props for both logics and components are PascalCase and end with `Props` (`DashboardLogicProps` & `DashboardMenuProps`)
+  - Name the `.ts` file according to its main export: `DashboardMenu.ts` or `DashboardMenu.tsx` or `dashboardLogic.ts` or `Dashboard.scss`. Pay attention to the case.
+  - Avoid `index.ts`, `styles.css`, and other generic names, even if this is the only file in a directory.
+
+UI and Styling
+  - Use Tailwind CSS as primary styling solution
+
+Testing Requirements
+  - React Testing Library tests for interactive lib/ components
+
+Core Principles
+  - Prioritize maintainability over development speed
+  - Keep data layer separate from view hierarchy
+  - Write clear, understandable code
+  - Think data first, implement views second
