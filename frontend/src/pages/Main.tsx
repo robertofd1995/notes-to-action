@@ -1,5 +1,7 @@
 import { NoteCard } from "../components/NoteCard"
 import { TaskCard } from "../components/task/TaskCard"
+import { MainToolbar } from "../components/MainToolbar"
+import { AppBar } from "../components/AppBar"
 
 const cards = [
     {
@@ -11,7 +13,7 @@ const cards = [
     },
     {
         id: 2,
-        title: "Card 2",
+
         description: "Card 2 description",
         onClick: () => console.log("Card 2 clicked"),
         createdAt: new Date(2025, 11, 1, 12, 30),
@@ -92,22 +94,45 @@ export function MainPage() {
     ))
 
     return (
-        <div className="p-6 min-h-screen">
-            <h1 className="text-2xl font-bold mb-6">Main Page</h1>
+        <div className="min-h-screen bg-white">
+            {/* Fixed AppBar at the top */}
+            <header className="fixed top-0 left-0 right-0 bg-white z-40 shadow-sm">
+                <AppBar
+                    onDrawerClick={() => console.log("Drawer clicked")}
+                    onSearchClick={() => console.log("Search clicked")}
+                    onSearchIconClick={() => console.log("Search icon clicked")}
+                    onProfileClick={() => console.log("Profile clicked")}
+                />
+            </header>
 
-            <div className="mb-8">
-                <h2 className="text-xl font-semibold mb-4">Notes</h2>
-                <div className="space-y-4">
-                    {cardsElements}
-                </div>
-            </div>
+            {/* Main content with padding to account for fixed header and footer */}
+            <main className="pt-[72px] pb-[96px] px-6">
+                <h1 className="text-2xl font-bold mb-6">Main Page</h1>
 
-            <div>
-                <h2 className="text-xl font-semibold mb-4">Tasks</h2>
-                <div className="space-y-4">
-                    {taskElements}
+                <div className="mb-8">
+                    <h2 className="text-xl font-semibold mb-4">Notes</h2>
+                    <div className="space-y-4">
+                        {cardsElements}
+                    </div>
                 </div>
-            </div>
+
+                <div>
+                    <h2 className="text-xl font-semibold mb-4">Tasks</h2>
+                    <div className="space-y-4">
+                        {taskElements}
+                    </div>
+                </div>
+            </main>
+
+            {/* Fixed MainToolbar at the bottom - centered */}
+            <footer className="fixed bottom-0 left-0 right-0 z-30 pb-6 pointer-events-none">
+                <div className="flex justify-center pointer-events-auto">
+                    <MainToolbar
+                        onMicrophoneClick={() => console.log("Microphone clicked")}
+                        onKeyboardClick={() => console.log("Keyboard clicked")}
+                    />
+                </div>
+            </footer>
         </div>
     )
 }
