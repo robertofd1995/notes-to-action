@@ -89,8 +89,8 @@ export function TaskCard({
     }
 
     return (
-        <Card onClick={onClick} data-id={id}>
-            <div className="group relative bg-white border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-lg hover:border-gray-300 transition-all duration-200 cursor-pointer">
+        <Card onClick={onClick} data-id={id} className="group shadow-sm hover:shadow-lg hover:border-gray-300 transition-all duration-200">
+            <div className="relative p-4">
                 {/* Priority Icon - Top Left Corner */}
                 {priority && (
                     <div className="absolute top-3 right-3 opacity-80 group-hover:opacity-100 transition-opacity">
