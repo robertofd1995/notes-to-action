@@ -3,6 +3,8 @@ import { TaskCard } from "../components/task/TaskCard"
 import { MainToolbar } from "../components/MainToolbar"
 import { AppBar } from "../components/AppBar"
 
+import posthog from "posthog-js"
+
 const cards = [
     {
         id: 1,
@@ -15,7 +17,10 @@ const cards = [
         id: 2,
 
         description: "Card 2 description",
-        onClick: () => console.log("Card 2 clicked"),
+        onClick: () => {
+            console.log("Card 2 clicked")
+            posthog.capture("card_2_clicked", { property: 'value' })
+        },
         createdAt: new Date(2025, 11, 1, 12, 30),
     }
 ]
