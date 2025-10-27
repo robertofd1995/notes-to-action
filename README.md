@@ -11,12 +11,14 @@ I often have ideas and while writting them down is always an option, but then no
 
 
 # How can I run it locally?
+# both frontend and backend
+`bin/start`
 
 ## frontend
 `npm run dev`
 
 ## backend
-TODO
+`uv run manage.py runserver`
 
 
 # How can I deploy it?
