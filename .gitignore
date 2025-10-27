@@ -1,3 +1,9 @@
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # Frontend
 frontend/node_modules
@@ -6,6 +12,15 @@ frontend/dist-ssr
 frontend/*.local
 # Vite-specific assets (we copy public assets to src/assets) just for development
 frontend/src/assets
+
+# Backend
+backend/.venv
+# Python bytecode cache - ignore at all levels
+**/__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
 
 # Logs
 logs
