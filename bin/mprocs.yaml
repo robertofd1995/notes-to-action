@@ -1,0 +1,10 @@
+procs:
+    backend:
+        shell: 'uv sync --active && uv run manage.py runserver'
+        cwd: './backend'
+    frontend:
+        cwd: './frontend'
+        shell: 'npm run dev'
+
+mouse_scroll_speed: 1
+scrollback: 10000
